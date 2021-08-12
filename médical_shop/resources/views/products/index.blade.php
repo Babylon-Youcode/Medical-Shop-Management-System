@@ -61,7 +61,7 @@
                                                     @csrf
                                                     @method('DELETE')
 
-                                                    <button type="submit" title="delete" style="border: none; background-color:transparent;">
+                                                    <button onclick="myFunction()" type="submit" title="delete" style="border: none; background-color:transparent;">
                                                         <i class="fas fa-trash fa-lg text-danger"></i>
 
                                                     </button>
@@ -84,3 +84,9 @@
 
 
 </x-app-layout>
+
+<script>
+    function myFunction(){
+        alert("Product deleted");
+    }
+    </script>
