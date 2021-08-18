@@ -14,7 +14,7 @@
         <tr>
             <td>
                 <div class="cart-info">
-                    <img src="{{ asset($product->image) }}">
+                    <img src="/image/{{$product->image}}" width="5%">
                     <div>
                         <p>{{ $product->name }}</p>
                         <small>{{ $product->cost }}</small>
@@ -23,7 +23,7 @@
                 </div>
             </td>
             <td><input type="number" value="{{ $cards[$loop->index]['qty'] }}" name=item[{{ $loop->index }}][quantite]></td>
-            <td>$35.00</td>
+            <td>35.00 DH</td>
         </tr>
         @endforeach
     </table>
@@ -31,15 +31,15 @@
         <table>
             <tr>
                 <td>Subtotal</td>
-                <td>$20.00</td>
+                <td><input onblur="findTotal()" type="text"  name="qty" id="qty1"/ ></td>
             </tr>
             <tr>
                 <td>Tax</td>
-                <td>$10.00</td>
+                <td><input onblur="findTotal()" type="text"  name="qty" id="qty2"/ ></td>
             </tr>
             <tr>
                 <td>Total</td>
-                <td>$20.00</td>
+                <td><input type="text" name="total" id="total"/></td>
             </tr>
             <tr>
             <td><button class="btn">Buy Now &#8594; </button></td>
@@ -52,3 +52,16 @@
 </div>
 
 </x-app-layout>
+
+
+<script type="text/javascript">
+    function findTotal(){
+        var arr = document.getElementsByName('qty');
+        var tot=0;
+        for(var i=0;i<arr.length;i++){
+            if(parseInt(arr[i].value))
+                tot += parseInt(arr[i].value);
+        }
+        document.getElementById('total').value = tot;
+    }
+</script>
