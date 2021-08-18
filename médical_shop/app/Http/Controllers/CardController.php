@@ -10,13 +10,7 @@ class CardController extends Controller
 {
     public function card($id, $qty)
     {
-        // [
-        //     ['id' => 1 , 'qty'=> 3],
-        //     ['id' => 1 , 'qty'=> 3],
-        //     ['id' => 1 , 'qty'=> 3],
-        //     ['id' => 1 , 'qty'=> 3],
-        //     ['id' => 1 , 'qty'=> 3],
-        // ]
+
 
         $cardItem = session('card') ?? [];
 
